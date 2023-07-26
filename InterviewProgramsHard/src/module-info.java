@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author shata
+ *
+ */
+module InterviewProgramsHard {
+}
