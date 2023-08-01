@@ -33,8 +33,7 @@ public class LengthOfLongestSubstring {
 			char currChar = s.charAt(right);
 			
 			if(map.containsKey(currChar) && map.get(currChar) >= left) {
-				left = map.get(currChar)+ 1;
-				
+				left = map.get(currChar)+ 1;				
 			}
 			maxLen = Math.max(maxLen, right-left+1);
 			map.put(s.charAt(right), right);
