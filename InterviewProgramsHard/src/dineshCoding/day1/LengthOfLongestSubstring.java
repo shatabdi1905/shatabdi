@@ -1,7 +1,4 @@
-package dineshCoding;
-
-import java.util.Arrays;
-import java.util.HashMap;
+package dineshCoding.day1;
 
 public class LengthOfLongestSubstring {
 
@@ -28,15 +25,14 @@ public class LengthOfLongestSubstring {
 	    
 		int maxLen =0;
 		
-		HashMap<Character, Integer> map = new HashMap<>();
-		for(int left =0, right =0; right < s.length();right ++)){
+		for(int left =0, right =0; right < s.length();right ++){
 			char currChar = s.charAt(right);
-			
-			if(map.containsKey(currChar) && map.get(currChar) >= left) {
-				left = map.get(currChar)+ 1;				
+			int indexOfFirstOccurrenceInSubstring = s.indexOf(currChar, left);
+			if(indexOfFirstOccurrenceInSubstring != right) {
+				left = indexOfFirstOccurrenceInSubstring + 1;				
 			}
 			maxLen = Math.max(maxLen, right-left+1);
-			map.put(s.charAt(right), right);
+			
 			
 		}
 		return maxLen;
@@ -44,7 +40,7 @@ public class LengthOfLongestSubstring {
 	public static void main(String[] args) {
 		
 		LengthOfLongestSubstring obj = new LengthOfLongestSubstring();
-		System.out.println(obj.lengthOfLongestSubstring(null));
+		System.out.println(obj.lengthOfLongestSubstring("abcabcabac"));
 		
 	}
 

@@ -1,4 +1,4 @@
-package dineshCoding;
+package dineshCoding.day1;
 
 import java.util.Scanner;
 
